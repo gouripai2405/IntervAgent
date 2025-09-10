@@ -72,8 +72,8 @@ if "question" in st.session_state:
             Reason: <one-line justification>
             """
 
-            rating_response = client.chat.completions.create(
-                model="llama3-8b-8192",
+            rating_response = openai.ChatCompletion.create(
+                model="llama-3.1-8b-instant",
                 messages=[{"role": "user", "content": rating_prompt}],
                 temperature=0.7
             )
