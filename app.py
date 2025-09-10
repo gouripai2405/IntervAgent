@@ -50,8 +50,8 @@ if "question" in st.session_state:
             - Suggestions for improvement
             """
 
-            feedback = client.chat.completions.create(
-                model="llama3-8b-8192",
+            feedback = openai.ChatCompletion.create(
+                model="llama-3.1-8b-instant",
                 messages=[{"role": "user", "content": feedback_prompt}],
                 temperature=0.7
             )
