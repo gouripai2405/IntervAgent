@@ -17,7 +17,7 @@ if st.button("🎤 Generate Interview Question"):
         Ask a challenging and relevant interview question for the role: {job_role}.
         """
         response = openai.ChatCompletion.create(
-            model="llama3-8b-8192",  # Or try llama3-70b / mixtral
+            model="llama-3.1-8b-instant",  # Or try llama3-70b / mixtral
             messages=[{"role": "user", "content": prompt}],
             temperature=0.7
         )
