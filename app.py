@@ -1,14 +1,11 @@
 import streamlit as st
-from openai import OpenAI
+import openai
 
 st.set_page_config(page_title="Agentic Mock Interviewer", layout="centered")
 st.title("🧠 Agentic Mock Interviewer + Feedback Generator")
 
-client = OpenAI(
-    api_key=st.secrets["GROQ_API_KEY"],  
-    base_url="https://api.groq.com/openai/v1" 
-)
-
+openai.api_key = st.secrets["GROQ_API_KEY"]
+openai.api_base = "https://api.groq.com/openai/v1"
 
 st.markdown("**Step 1:** Enter the role you're preparing for")
 job_role = st.text_input("Enter Role (e.g., Data Scientist at Google)")
